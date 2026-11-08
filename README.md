@@ -7,15 +7,20 @@ Plain static files, no build step. Everything served lives in `public/`.
 | File | What it is |
 |---|---|
 | `public/index.html` | The landing page, and the invite page for `/join/<code>` (also `/?c=<code>`) |
+| `public/404.html` | "Page not found" for any other address (real 404 status) |
+| `public/style.css` | Styles shared by every page (light and dark) |
+| `public/_redirects` | Serves `index.html` for `/join/<code>`, keeping the address |
 | `public/.well-known/assetlinks.json` | Lets Android open `esplit.vilarci.in` links straight in the app (App Links) |
 | `public/_headers` | Cloudflare Pages headers (JSON type for assetlinks, basic safety headers) |
 | `public/icon-512.png`, `icon-192.png`, `favicon.png` | Icons, made from the app's `assets/icon.png` |
 
 ## Rules
 
-- **No `404.html` in `public/`.** Without one, Cloudflare Pages serves
-  `index.html` for every path, which is how `/join/<code>` reaches the
-  invite page. Adding a 404 page breaks invite links.
+- **Keep the `/join/* / 200` line in `_redirects`.** Because `404.html`
+  exists, Pages no longer serves `index.html` for unknown paths by itself;
+  that line is what makes invite links work. Its target must be `/`, not
+  `/index.html` (Pages redirects `/index.html` to `/`, which would drop the
+  code from the address).
 - Invite codes are 8 characters from `23456789ABCDEFGHJKLMNPQRSTUVWXYZ`
   (no 0/O or 1/I). The app must use the same rule.
 - `assetlinks.json` must list the SHA-256 of **both** signing keys: the
@@ -37,6 +42,13 @@ Plain static files, no build step. Everything served lives in `public/`.
      (not the HTML page).
 
 Every push to `main` redeploys the site.
+
+## Try it locally
+
+`npx wrangler@4.20.0 pages dev public --port 8788` runs Cloudflare's own
+Pages server (`_redirects`, `_headers` and the 404 page behave as live).
+Open http://127.0.0.1:8788/join/K7QM2XPA. It leaves `.wrangler/` and
+`node_modules/` behind; delete them (stop the server first).
 
 ## Planned pages
 

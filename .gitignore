@@ -147,3 +147,6 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Local Cloudflare Pages test runs (npx wrangler pages dev)
+.wrangler/

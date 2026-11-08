@@ -1,0 +1,3 @@
+# Invite links: serve the home page (which shows the invite) for /join/<code>,
+# keeping the address. With a 404.html present, Pages no longer does this by itself.
+/join/* / 200

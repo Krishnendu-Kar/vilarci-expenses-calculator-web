@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New password · Vilarci E-Split</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#9A0003">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/style.css">
+<style>
+  label { display: block; text-align: left; font-size: 13px; font-weight: 600; color: var(--muted); margin: 14px 0 6px; text-transform: uppercase; letter-spacing: .5px; }
+  input { width: 100%; padding: 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); color: var(--text); font-size: 16px; }
+  .error { color: #d9534f; font-weight: 600; margin-top: 12px; }
+</style>
+</head>
+<body>
+<!-- The link in the "reset your password" email lands here (account.ts: PASSWORD_RESET_URL). -->
+<main>
+  <img class="logo" src="/icon-192.png" alt="" width="72" height="72">
+
+  <section id="wait">
+    <h1>One moment…</h1>
+  </section>
+
+  <form id="form" hidden>
+    <h1>Set a new password</h1>
+    <p>For your Vilarci E-Split account.</p>
+    <label for="pw">New password</label>
+    <input id="pw" type="password" autocomplete="new-password" minlength="8" maxlength="72" required>
+    <label for="pw2">Type it again</label>
+    <input id="pw2" type="password" autocomplete="new-password" minlength="8" maxlength="72" required>
+    <p class="error" id="error" hidden></p>
+    <div class="actions"><button class="btn primary" id="save" type="submit">Save password</button></div>
+  </form>
+
+  <section id="done" hidden>
+    <h1>Password changed</h1>
+    <p>Go back to the app and sign in with your new password.</p>
+  </section>
+
+  <section id="expired" hidden>
+    <h1>This link has expired</h1>
+    <p>Open the app, tap <b>Forgot password?</b> and ask for a new link. Each link works once.</p>
+  </section>
+
+  <footer>Made by Vilarci</footer>
+</main>
+<!-- Supabase's own client, pinned to the version the app uses. -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0/dist/umd/supabase.js"></script>
+<script>
+  // Same project and publishable key as the app (src/lib/api/config.ts); safe to publish.
+  var client = supabase.createClient('https://orxeebeipucwdietutdu.supabase.co', 'sb_publishable_EXv369uMG6RkOTd5XqR0hA_S3wywjOY', {
+    auth: { detectSessionInUrl: true, persistSession: false, autoRefreshToken: false },
+  });
+  var show = function (id) {
+    ['wait', 'form', 'done', 'expired'].forEach(function (s) { document.getElementById(s).hidden = s !== id; });
+  };
+  var hadError = new URLSearchParams(location.hash.slice(1)).get('error');
+
+  // The link signs this page in for the reset only; then the tokens leave the address bar.
+  client.auth.getSession().then(function (r) {
+    if (location.hash) history.replaceState(null, '', location.pathname);
+    show(r.data.session && !hadError ? 'form' : 'expired');
+  });
+
+  document.getElementById('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var pw = document.getElementById('pw').value;
+    var error = document.getElementById('error');
+    error.hidden = true;
+    if (pw.length < 8) { error.textContent = 'The password needs at least 8 characters.'; error.hidden = false; return; }
+    if (pw !== document.getElementById('pw2').value) { error.textContent = "The two passwords don't match."; error.hidden = false; return; }
+    document.getElementById('save').disabled = true;
+    client.auth.updateUser({ password: pw }).then(function (r) {
+      document.getElementById('save').disabled = false;
+      if (r.error) { error.textContent = r.error.message; error.hidden = false; return; }
+      client.auth.signOut();
+      show('done');
+    });
+  });
+</script>
+</body>
+</html>

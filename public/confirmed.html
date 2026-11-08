@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Email confirmed · Vilarci E-Split</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#9A0003">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<!-- The link in the "confirm your email" message lands here (account.ts: EMAIL_CONFIRMED_URL). -->
+<main>
+  <img class="logo" src="/icon-192.png" alt="" width="72" height="72">
+  <section id="ok">
+    <h1>Email confirmed</h1>
+    <p>Your Vilarci E-Split account is ready. Go back to the app and sign in with your email and password.</p>
+  </section>
+  <section id="expired" hidden>
+    <h1>This link has expired</h1>
+    <p>Open the app, try to sign in, and tap <b>Send the email again</b> for a new link.</p>
+  </section>
+  <footer>Made by Vilarci</footer>
+</main>
+<script>
+  // Supabase adds the result after "#". An error means the link was old or used.
+  var hash = new URLSearchParams(location.hash.slice(1));
+  if (hash.get('error') || new URLSearchParams(location.search).get('error')) {
+    document.getElementById('ok').hidden = true;
+    document.getElementById('expired').hidden = false;
+  }
+  // Don't leave sign-in tokens in the address bar or the history.
+  if (location.hash) history.replaceState(null, '', location.pathname);
+</script>
+</body>
+</html>

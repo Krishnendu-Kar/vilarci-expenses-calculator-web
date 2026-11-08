@@ -23,10 +23,15 @@ Plain static files, no build step. Everything served lives in `public/`.
   code from the address).
 - Invite codes are 8 characters from `23456789ABCDEFGHJKLMNPQRSTUVWXYZ`
   (no 0/O or 1/I). The app must use the same rule.
-- `assetlinks.json` must list the SHA-256 of **both** signing keys: the
-  upload key (already in) and the **Play App Signing key** (Play Console →
-  Test and release → App integrity → App signing). Without the Play one,
-  apps installed from Play open this page instead of the app.
+- `assetlinks.json` lists the SHA-256 of **both** signing keys, and both
+  must stay:
+  - `02:B5:…:21:3A`: the **Play App Signing key**, which signs apps
+    installed from Google Play (Play Console → Protected with Play → Play
+    Store protection → Play App Signing);
+  - `37:E9:…:96:FF`: the **upload key**, which signs builds installed
+    straight from the developer's PC.
+  Without the Play one, apps installed from Play open this page instead of
+  the app.
 
 ## Cloudflare Pages (one-time setup)
 

@@ -12,7 +12,7 @@ Plain static files, no build step. Everything served lives in `public/`.
 | `public/reset.html` | `/reset`: set a new password from the reset email (uses supabase-js 2.119.0 from jsDelivr and the app's publishable key) |
 | `public/privacy.html` | `/privacy`: privacy policy. **Draft:** fill in `[contact email]` before publishing |
 | `public/delete-account.html` | `/delete-account`: how to delete an account (Google Play needs this link). **Draft:** same placeholder |
-| `public/style.css` | Styles shared by every page (light and dark), including `.gplay`, the black "Get it on Google Play" badge (the Play mark is an inline SVG in each page) |
+| `public/style.css` | Styles shared by every page (light and dark), including `.gplay`, the wrapper for Google's official "Get it on Google Play" badge (`public/google-play-badge.png`, used unmodified per Google's badge guidelines) |
 | `public/home.css` | The landing page's own styles (only `index.html` loads it). Everything is scoped to `.lp`; `html.invite` (set in `index.html`'s `<head>` for `/join/<code>` and `?c=`) hides the landing and shows the invite card from `style.css` |
 | `public/_redirects` | Serves `index.html` for `/join/<code>`, keeping the address |
 | `public/.well-known/assetlinks.json` | Lets Android open `esplit.vilarci.in` links straight in the app (App Links) |

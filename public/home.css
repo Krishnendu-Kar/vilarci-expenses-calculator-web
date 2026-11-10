@@ -93,16 +93,11 @@ html:not(.invite) body {
 @media (min-width: 720px) { .lp-wrap { padding: 0 32px; } }
 
 /* ---- Buttons ---- */
-/* The Google Play badge (.gplay in style.css), a little bigger here and lifting on hover. */
-.lp-play {
-  padding: 10px 24px 10px 16px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px -10px rgba(20, 0, 2, .55);
-  transition: transform .25s cubic-bezier(.2, .7, .2, 1), box-shadow .25s;
-}
-.lp-play:hover { transform: translateY(-2px); box-shadow: 0 16px 36px -10px rgba(20, 0, 2, .6); }
-.lp-play svg { width: 32px; height: 32px; }
-.lp-play span { font-size: 24px; }
+/* The Google Play badge (.gplay in style.css), a little bigger here and lifting on hover.
+   No shadow or other effects on the artwork itself. */
+.lp-play { transition: transform .25s cubic-bezier(.2, .7, .2, 1); }
+.lp-play:hover { transform: translateY(-2px); }
+.lp-play img { height: 78px; }
 
 .lp-pill {
   display: inline-flex; align-items: center;
@@ -544,7 +539,7 @@ html:not(.invite) body {
   .lp-final { background: radial-gradient(800px 420px at 50% 0%, #8c0c12 0%, transparent 70%), linear-gradient(180deg, #4f0307, #250103); }
 }
 .lp-final .lp-ring { right: 50%; top: 0; translate: 50% -62%; width: 900px; height: 900px; }
-.lp-final img { width: 88px; height: 88px; border-radius: 22px; margin: 0 auto 32px; box-shadow: 0 0 0 1px rgba(255, 255, 255, .25), 0 20px 50px -16px rgba(0, 0, 0, .6); }
+.lp-final > .lp-wrap > img { width: 88px; height: 88px; border-radius: 22px; margin: 0 auto 32px; box-shadow: 0 0 0 1px rgba(255, 255, 255, .25), 0 20px 50px -16px rgba(0, 0, 0, .6); }
 .lp-final h2 { font: 400 clamp(46px, 7.4vw, 92px)/1 var(--serif); letter-spacing: -.02em; }
 .lp-final h2 em { color: #f1d29a; }
 .lp-final p { margin: 22px auto 40px; color: rgba(255, 255, 255, .78); font-size: 18px; max-width: 60ch; }

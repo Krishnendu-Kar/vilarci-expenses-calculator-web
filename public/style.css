@@ -76,19 +76,7 @@ li { margin: 4px 0; }
 [hidden] { display: none !important; }
 footer { margin-top: 22px; font-size: 13px; color: var(--muted); }
 footer a { color: inherit; }
-/* The "Get it on Google Play" badge: black, a thin grey edge, the four-colour Play mark. */
-.gplay {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  justify-self: center;
-  padding: 8px 20px 8px 14px;
-  border: 1px solid #a6a6a6;
-  border-radius: 10px;
-  background: #000;
-  color: #fff;
-  text-decoration: none;
-}
-.gplay svg { width: 30px; height: 30px; flex: none; }
-.gplay span { display: grid; text-align: left; line-height: 1.1; font-size: 22px; font-weight: 500; letter-spacing: -.01em; }
-.gplay small { font-size: 11px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
+/* The "Get it on Google Play" badge: Google's own artwork, shown as-is (Play badge guidelines
+   forbid redrawing or recolouring it). The PNG includes Google's required clear space. */
+.gplay { display: inline-block; justify-self: center; line-height: 0; }
+.gplay img { display: block; width: auto; height: 64px; }

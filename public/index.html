@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vilarci E-Split</title>
-<meta name="description" content="Split group expenses with friends, trips and hostel mess. Works offline.">
-<meta name="theme-color" content="#9A0003">
+<meta name="description" content="Split group expenses with friends: trips, hostel mess and flatmates. Live groups on every phone, pay by UPI, works offline.">
+<meta name="theme-color" content="#24060A">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/icon-192.png">
 <!-- Link previews (WhatsApp, Telegram). This page serves / and every /join/<code>, so these stay general. -->
@@ -36,6 +36,7 @@
       <a class="lp-mark" href="/"><img src="/icon-192.png" alt="" width="34" height="34"><span>Vilarci <em>E-Split</em></span></a>
       <nav class="lp-links" aria-label="Sections">
         <a href="#how">How it works</a>
+        <a href="#live">Live groups</a>
         <a href="#features">Features</a>
         <a href="#privacy">Privacy</a>
       </nav>
@@ -46,12 +47,13 @@
   <main class="lp-main">
     <section class="lp-hero">
       <div class="lp-grain" aria-hidden="true"></div>
-      <div class="lp-ring" aria-hidden="true"></div>
+      <!-- The app's Home lamp, swinging over the phone. -->
+      <div class="lamp" aria-hidden="true"><i class="lamp-cord"></i><i class="lamp-bulb"></i><i class="lamp-light"></i></div>
       <div class="lp-wrap lp-hero-in">
         <div class="lp-hero-copy">
-          <p class="lp-eyebrow">For trips, hostel mess &amp; flatmates</p>
+          <p class="lp-eyebrow"><i></i>For trips, hostel mess &amp; flatmates</p>
           <h1 class="lp-display">Every rupee,<br><em>fairly</em> shared.</h1>
-          <p class="lp-lede">Log who paid for what. Vilarci E-Split works out who owes whom, and the fewest payments that make everyone even.</p>
+          <p class="lp-lede">Log who paid for what, on your own phone or live with the whole group. Vilarci E-Split works out who owes whom, the fewest payments to even it out, and lets everyone pay by UPI.</p>
           <div class="lp-cta">
             <a class="gplay lp-play play" href="https://play.google.com/store/apps/details?id=in.vilarci.expensesplit">
               <img src="/google-play-badge.png" alt="Get it on Google Play" width="646" height="250">
@@ -65,38 +67,55 @@
           </ul>
         </div>
 
-        <div class="lp-stage" role="img" aria-label="The app's Settle tab for a Goa trip: ₹24,800 spent by 4 people, settled in 3 payments.">
-          <div class="chip chip-sum"><small>Amount</small><code>48+80+64</code><b>= ₹192</b></div>
+        <div class="lp-stage" role="img" aria-label="The app's Members tab for Room 204: ₹24,800 spent by 4 people. You get back ₹3,600; Swapnanil, Rahul and Tamal owe.">
+          <div class="chip chip-upi"><span class="upi">UPI</span><div><small>Swapnanil paid you</small><b>₹2,000 by UPI</b></div></div>
           <div class="ph">
             <div class="ph-screen">
-              <div class="ph-status"><span>9:41</span><i></i></div>
               <div class="ph-head">
-                <div class="ph-bar"><span>←</span><b>Goa trip</b><span>⋮</span></div>
+                <div class="ph-status"><span>9:41</span><i></i></div>
+                <div class="ph-bar">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+                  <b>Room 204</b>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 1 1 12 0c0 5 2 6.5 2 6.5H4S6 14 6 9zM10 19.5a2.2 2.2 0 0 0 4 0"/></svg>
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/></svg>
+                </div>
                 <div class="ph-total"><small>Total spent</small><strong>₹24,800</strong><small>₹6,200 per person · 4 people</small></div>
-                <div class="ph-tabs"><span>Expenses</span><span>Members</span><span class="on">Settle (3)</span><span>Stats</span></div>
+                <div class="ph-handle"><i></i><svg viewBox="0 0 12 8" width="10" height="7" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 6.5L6 1.5l5 5"/></svg></div>
+                <div class="ph-tabs"><span>Expenses</span><span class="on">Members</span><span>Settle</span><span>Stats</span></div>
               </div>
               <div class="ph-body">
-                <p class="ph-note">The fewest payments that make everyone even.</p>
-                <div class="ph-row">
-                  <div class="ph-pair"><i class="av" style="--c:#1E4FA8">R</i><i class="av" style="--c:#7A1F2B">K</i></div>
-                  <div><b>Rahul pays Krish (you)</b><span>₹4,100</span></div>
-                  <strong class="ph-paid">Paid</strong>
+                <div class="ph-search">
+                  <div><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>Search members</div>
+                  <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></svg></span>
+                </div>
+                <div class="ph-row me">
+                  <i class="av" style="--c:#7A1F2B">KM</i>
+                  <div><b>You <span class="tag t">Creator</span></b><small>Paid ₹9,800 · Share ₹6,200</small></div>
+                  <div class="ph-amt pos">₹3,600<small>gets back</small></div>
                 </div>
                 <div class="ph-row">
-                  <div class="ph-pair"><i class="av" style="--c:#B5651D">T</i><i class="av" style="--c:#7A1F2B">K</i></div>
-                  <div><b>Tamal pays Krish (you)</b><span>₹900</span></div>
-                  <strong class="ph-paid">Paid</strong>
+                  <i class="av" style="--c:#B5195E">SP</i>
+                  <div><b class="unsaved">~Swapnanil Pal</b><small>Paid ₹4,200 · Share ₹6,200</small></div>
+                  <div class="ph-amt neg">₹2,000<small>owes</small></div>
                 </div>
                 <div class="ph-row">
-                  <div class="ph-pair"><i class="av" style="--c:#B5651D">T</i><i class="av" style="--c:#00838F">S</i></div>
-                  <div><b>Tamal pays Sayak</b><span>₹1,200</span></div>
-                  <strong class="ph-paid">Paid</strong>
+                  <i class="av" style="--c:#1E4FA8">R</i>
+                  <div><b>Rahul <span class="tag">Guest</span></b><small>Paid ₹6,000 · Share ₹6,200</small></div>
+                  <div class="ph-amt neg">₹200<small>owes</small></div>
                 </div>
-                <div class="ph-send">Send to the group</div>
+                <div class="ph-row">
+                  <i class="av" style="--c:#B5651D">T</i>
+                  <div><b>Tamal <span class="tag">Guest</span></b><small>Paid ₹4,800 · Share ₹6,200</small></div>
+                  <div class="ph-amt neg">₹1,400<small>owes</small></div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="chip chip-back"><i class="av" style="--c:#7A1F2B">K</i><div><small>Krish (you)</small><b>gets back ₹5,000</b></div></div>
+          <div class="chip chip-code">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 20h1M20 14h1"/></svg>
+            <div><small>Invite code</small><code>K7QM-2XPA</code></div>
+          </div>
+          <div class="chip chip-net"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 3l18 18M8.6 7.3A5.5 5.5 0 0 1 17.5 10 4 4 0 0 1 20.2 17M16 19H7a4.5 4.5 0 0 1-1.7-8.7"/></svg>No internet · it'll upload later</div>
         </div>
       </div>
     </section>
@@ -108,23 +127,84 @@
       </div>
     </div>
 
-    <section class="lp-sec" id="how">
+    <section class="lp-sec lp-how" id="how">
       <div class="lp-wrap">
         <div class="lp-head rv">
           <p class="lp-kicker">How it works</p>
           <h2 class="lp-h2">From <em>“who paid?”</em> to settled, in three steps.</h2>
         </div>
         <ol class="lp-steps rv">
-          <li><span class="lp-num">01</span><h3>Make a group</h3><p>A trip, a hostel or flat, or anything else. Add yourself in one tap, and friends from your other groups in another.</p></li>
-          <li><span class="lp-num">02</span><h3>Log what's spent</h3><p>One person paid or several. Split it equally, by exact amounts, by shares or by percent. Leave halfway and your draft waits for you.</p></li>
-          <li><span class="lp-num">03</span><h3>Settle up</h3><p>See who owes whom, and the fewest payments that make everyone even. Tap Paid once the money's sent.</p></li>
+          <li>
+            <span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M17 8v6M14 11h6"/></svg></span>
+            <h3>Make a group</h3>
+            <p>A trip, a hostel or flat, or anything else. Keep it on this phone, or put it online and send the link. An unfinished group waits as a draft.</p>
+          </li>
+          <li>
+            <span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 5h16v14H4zM8 9h8M8 13h5"/></svg></span>
+            <h3>Log what's spent</h3>
+            <p>One person paid or several. Split equally, by amounts, shares or percent. Or paste the group chat and let it read every number.</p>
+          </li>
+          <li>
+            <span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></span>
+            <h3>Settle up</h3>
+            <p>See who owes whom and the fewest payments that make everyone even. Pay by UPI right from there, then tap Paid.</p>
+          </li>
         </ol>
       </div>
     </section>
 
-    <section class="lp-sec lp-spot" id="features">
-      <div class="lp-wrap lp-spot-in">
-        <div class="lp-spot-copy rv">
+    <section class="lp-sec lp-sky" id="live">
+      <div class="lp-grain" aria-hidden="true"></div>
+      <div class="lp-wrap lp-split">
+        <div class="rv">
+          <p class="lp-kicker">Live groups</p>
+          <h2 class="lp-h2">One group, <em>every phone.</em></h2>
+          <p class="lp-sub">Put a group online and everyone sees the same expenses on their own phone, as they happen. No more “send me the latest list”.</p>
+          <ul class="lp-points">
+            <li>
+              <span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></svg></span>
+              <div><b>Invite with a link or a QR code</b><span>Share it on WhatsApp or let friends scan it. Admins can let people in one by one.</span></div>
+            </li>
+            <li>
+              <span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+              <div><b>Names you know, like WhatsApp</b><span>Friends show as <span class="unsaved">~Their name</span> until you save one, with their verified email. You're just “You”.</span></div>
+            </li>
+            <li>
+              <span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 9a6 6 0 1 1 12 0c0 5 2 6.5 2 6.5H4S6 14 6 9zM10 19.5a2.2 2.2 0 0 0 4 0"/></svg></span>
+              <div><b>Activity, so nothing changes quietly</b><span>Every expense added, edited or paid, who did it and when.</span></div>
+            </li>
+            <li>
+              <span class="ic"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l18 18M8.6 7.3A5.5 5.5 0 0 1 17.5 10 4 4 0 0 1 20.2 17M16 19H7a4.5 4.5 0 0 1-1.7-8.7"/></svg></span>
+              <div><b>Still works with no signal</b><span>Keep adding. A small bar says No internet, and it all uploads by itself when you're back.</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="live-art rv" role="img" aria-label="An invite card for Room 204 with a QR code and the code K7QM-2XPA, next to the group's Activity: Neha added Dinner, Rahul joined, you marked a payment paid, Swapnanil edited Cab.">
+          <div class="card-glass invite" aria-hidden="true">
+            <small>Join a group</small>
+            <h4>Room 204</h4>
+            <svg class="qr" viewBox="-1 -1 23 23" shape-rendering="crispEdges"><path fill="#24060A" d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM9 0h1v1h-1zM11 0h1v1h-1zM14 0h1v1h-1zM15 0h1v1h-1zM16 0h1v1h-1zM17 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM10 1h1v1h-1zM12 1h1v1h-1zM14 1h1v1h-1zM20 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM14 2h1v1h-1zM16 2h1v1h-1zM17 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM9 3h1v1h-1zM10 3h1v1h-1zM11 3h1v1h-1zM12 3h1v1h-1zM14 3h1v1h-1zM16 3h1v1h-1zM17 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM14 4h1v1h-1zM16 4h1v1h-1zM17 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM11 5h1v1h-1zM14 5h1v1h-1zM20 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM9 6h1v1h-1zM10 6h1v1h-1zM14 6h1v1h-1zM15 6h1v1h-1zM16 6h1v1h-1zM17 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM11 7h1v1h-1zM3 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM11 8h1v1h-1zM15 8h1v1h-1zM16 8h1v1h-1zM3 9h1v1h-1zM8 9h1v1h-1zM12 9h1v1h-1zM14 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM20 9h1v1h-1zM2 10h1v1h-1zM3 10h1v1h-1zM5 10h1v1h-1zM8 10h1v1h-1zM10 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM20 10h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM11 11h1v1h-1zM13 11h1v1h-1zM17 11h1v1h-1zM20 11h1v1h-1zM5 12h1v1h-1zM6 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM12 12h1v1h-1zM14 12h1v1h-1zM15 12h1v1h-1zM16 12h1v1h-1zM17 12h1v1h-1zM18 12h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1zM14 13h1v1h-1zM16 13h1v1h-1zM19 13h1v1h-1zM0 14h1v1h-1zM1 14h1v1h-1zM2 14h1v1h-1zM3 14h1v1h-1zM4 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM8 14h1v1h-1zM9 14h1v1h-1zM12 14h1v1h-1zM13 14h1v1h-1zM15 14h1v1h-1zM0 15h1v1h-1zM6 15h1v1h-1zM9 15h1v1h-1zM11 15h1v1h-1zM13 15h1v1h-1zM18 15h1v1h-1zM0 16h1v1h-1zM2 16h1v1h-1zM3 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM8 16h1v1h-1zM9 16h1v1h-1zM11 16h1v1h-1zM14 16h1v1h-1zM15 16h1v1h-1zM19 16h1v1h-1zM0 17h1v1h-1zM2 17h1v1h-1zM3 17h1v1h-1zM4 17h1v1h-1zM6 17h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM17 17h1v1h-1zM19 17h1v1h-1zM20 17h1v1h-1zM0 18h1v1h-1zM2 18h1v1h-1zM3 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM8 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM19 18h1v1h-1zM0 19h1v1h-1zM6 19h1v1h-1zM8 19h1v1h-1zM10 19h1v1h-1zM11 19h1v1h-1zM12 19h1v1h-1zM13 19h1v1h-1zM14 19h1v1h-1zM17 19h1v1h-1zM18 19h1v1h-1zM20 19h1v1h-1zM0 20h1v1h-1zM1 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM10 20h1v1h-1zM12 20h1v1h-1zM13 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1z"/></svg>
+            <code>K7QM-2XPA</code>
+            <p>8 people · admins approve</p>
+          </div>
+          <div class="card-glass feed" aria-hidden="true">
+            <h4><span>Activity</span><span>Today</span></h4>
+            <ul>
+              <li><i class="av" style="--c:#00838F">N</i><div><b>Neha</b> added <b>Dinner</b> ₹1,200<time>9:12 pm</time></div></li>
+              <li><i class="av" style="--c:#1E4FA8">R</i><div><b>Rahul</b> joined with the link<time>8:40 pm</time></div></li>
+              <li><i class="av" style="--c:#7A1F2B">K</i><div><b>You</b> marked <b>Tamal → Sayak ₹1,200</b> paid<time>8:15 pm</time></div></li>
+              <li><i class="av" style="--c:#B5195E">S</i><div><b class="unsaved">~Swapnanil</b> edited <b>Cab</b>: ₹600 → ₹650<time>7:52 pm</time></div></li>
+            </ul>
+          </div>
+          <p class="net-bar" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 3l18 18M8.6 7.3A5.5 5.5 0 0 1 17.5 10 4 4 0 0 1 20.2 17M16 19H7a4.5 4.5 0 0 1-1.7-8.7"/></svg>No internet <span>· Room 204 goes online when you're back</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-sec lp-chat" id="features">
+      <div class="lp-wrap lp-split flip">
+        <div class="rv">
           <p class="lp-kicker">Many at once</p>
           <h2 class="lp-h2">Paste the group chat. <em>It does the rest.</em></h2>
           <p class="lp-sub">Copy the messages from WhatsApp and paste them in. Every amount is read, totalled and shown in a preview before anything is added. Short names and small typos still find the right person.</p>
@@ -148,51 +228,93 @@
               <li class="ask"><b>Krish paid</b><span>₹180</span><small>Which 3 people shared it?</small></li>
               <li><b>Krish paid</b><span>₹120</span><small>For everyone</small></li>
               <li><b>Tamal paid</b><span>₹290</span><small>For everyone</small></li>
-              <li><b>You paid · khabr</b><span>₹50</span><small>For Krish and Tamal</small></li>
+              <li><b>You paid · khabar</b><span>₹50</span><small>For Krish and Tamal</small></li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="lp-sec lp-spot flip">
-      <div class="lp-wrap lp-spot-in">
-        <div class="lp-spot-copy rv">
+    <section class="lp-sec lp-settle-sec">
+      <div class="lp-wrap lp-split">
+        <div class="rv">
           <p class="lp-kicker">Settle up</p>
           <h2 class="lp-h2">A tangle of IOUs, <em>untied.</em></h2>
-          <p class="lp-sub">Five friends, one long weekend, and everyone paid for something. Vilarci E-Split nets it all out and shows only the fewest payments that make everyone even. Mark each one Paid as it happens, and undo it if you tapped too soon.</p>
+          <p class="lp-sub">Five friends, one long weekend, and everyone paid for something. Vilarci E-Split nets it all out and shows only the fewest payments that make everyone even. Pay straight from there with any UPI app, then mark it Paid, or undo if you tapped too soon.</p>
         </div>
-        <div class="lp-settle rv" role="img" aria-label="Eight debts between five friends reduced to three payments.">
-          <figure>
-            <svg viewBox="0 0 240 200" aria-hidden="true">
-              <defs><marker id="hb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="net-head" d="M0 0L10 5L0 10z"/></marker></defs>
-              <path class="net-edge" marker-end="url(#hb)" d="M136.2 37.8L175.6 66.4"/>
-              <path class="net-edge" marker-end="url(#hb)" d="M188.0 98.9L173.0 145.2"/>
-              <path class="net-edge" marker-end="url(#hb)" d="M145.8 167.1L97.2 167.1"/>
-              <path class="net-edge" marker-end="url(#hb)" d="M68.0 148.1L52.9 101.8"/>
-              <path class="net-edge" marker-end="url(#hb)" d="M62.0 68.1L101.4 39.5"/>
-              <path class="net-edge" marker-end="url(#hb)" d="M126.2 45.0L158.7 145.2"/>
-              <path class="net-edge" marker-end="url(#hb)" d="M178.0 91.7L92.8 153.6"/>
-              <path class="net-edge" marker-end="url(#hb)" d="M62.0 91.7L147.2 153.6"/>
-              <g class="net-node"><circle cx="120" cy="26" r="17"/><text x="120" y="26">K</text><circle cx="194.2" cy="79.9" r="17"/><text x="194.2" y="79.9">S</text><circle cx="165.8" cy="167.1" r="17"/><text x="165.8" y="167.1">T</text><circle cx="74.2" cy="167.1" r="17"/><text x="74.2" y="167.1">R</text><circle cx="45.8" cy="79.9" r="17"/><text x="45.8" y="79.9">O</text></g>
-            </svg>
-            <figcaption>Who owes whom <strong>8</strong></figcaption>
-          </figure>
-          <figure class="after">
-            <svg viewBox="0 0 240 200" aria-hidden="true">
-              <defs><marker id="ha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="net-head" d="M0 0L10 5L0 10z"/></marker></defs>
-              <path class="net-edge" marker-end="url(#ha)" d="M80.3 148.1L112.9 47.9"/>
-              <path class="net-edge" marker-end="url(#ha)" d="M62.0 68.1L101.4 39.5"/>
-              <path class="net-edge" marker-end="url(#ha)" d="M172.0 148.1L187.1 101.8"/>
-              <g class="net-node"><circle cx="120" cy="26" r="17"/><text x="120" y="26">K</text><circle cx="194.2" cy="79.9" r="17"/><text x="194.2" y="79.9">S</text><circle cx="165.8" cy="167.1" r="17"/><text x="165.8" y="167.1">T</text><circle cx="74.2" cy="167.1" r="17"/><text x="74.2" y="167.1">R</text><circle cx="45.8" cy="79.9" r="17"/><text x="45.8" y="79.9">O</text></g>
-            </svg>
-            <figcaption>Payments to settle <strong>3</strong></figcaption>
-          </figure>
+        <div class="rv">
+          <div class="lp-settle" role="img" aria-label="Eight debts between five friends reduced to three payments.">
+            <figure>
+              <svg viewBox="0 0 240 200" aria-hidden="true">
+                <defs><marker id="hb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="net-head" d="M0 0L10 5L0 10z"/></marker></defs>
+                <path class="net-edge" marker-end="url(#hb)" d="M136.2 37.8L175.6 66.4"/>
+                <path class="net-edge" marker-end="url(#hb)" d="M188.0 98.9L173.0 145.2"/>
+                <path class="net-edge" marker-end="url(#hb)" d="M145.8 167.1L97.2 167.1"/>
+                <path class="net-edge" marker-end="url(#hb)" d="M68.0 148.1L52.9 101.8"/>
+                <path class="net-edge" marker-end="url(#hb)" d="M62.0 68.1L101.4 39.5"/>
+                <path class="net-edge" marker-end="url(#hb)" d="M126.2 45.0L158.7 145.2"/>
+                <path class="net-edge" marker-end="url(#hb)" d="M178.0 91.7L92.8 153.6"/>
+                <path class="net-edge" marker-end="url(#hb)" d="M62.0 91.7L147.2 153.6"/>
+                <g class="net-node"><circle cx="120" cy="26" r="17"/><text x="120" y="26">K</text><circle cx="194.2" cy="79.9" r="17"/><text x="194.2" y="79.9">S</text><circle cx="165.8" cy="167.1" r="17"/><text x="165.8" y="167.1">T</text><circle cx="74.2" cy="167.1" r="17"/><text x="74.2" y="167.1">R</text><circle cx="45.8" cy="79.9" r="17"/><text x="45.8" y="79.9">O</text></g>
+              </svg>
+              <figcaption>Who owes whom <strong>8</strong></figcaption>
+            </figure>
+            <figure class="after">
+              <svg viewBox="0 0 240 200" aria-hidden="true">
+                <defs><marker id="ha" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="net-head" d="M0 0L10 5L0 10z"/></marker></defs>
+                <path class="net-edge" marker-end="url(#ha)" d="M80.3 148.1L112.9 47.9"/>
+                <path class="net-edge" marker-end="url(#ha)" d="M62.0 68.1L101.4 39.5"/>
+                <path class="net-edge" marker-end="url(#ha)" d="M172.0 148.1L187.1 101.8"/>
+                <g class="net-node"><circle cx="120" cy="26" r="17"/><text x="120" y="26">K</text><circle cx="194.2" cy="79.9" r="17"/><text x="194.2" y="79.9">S</text><circle cx="165.8" cy="167.1" r="17"/><text x="165.8" y="167.1">T</text><circle cx="74.2" cy="167.1" r="17"/><text x="74.2" y="167.1">R</text><circle cx="45.8" cy="79.9" r="17"/><text x="45.8" y="79.9">O</text></g>
+              </svg>
+              <figcaption>Payments to settle <strong>3</strong></figcaption>
+            </figure>
+          </div>
+          <div class="upi-row" aria-hidden="true">
+            <i class="av" style="--c:#B5651D">T</i>
+            <div><b>Tamal pays Sayak</b><small>₹1,200 · sayak@okaxis</small></div>
+            <span class="pay">Pay</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="lp-sec">
+    <section class="lp-sec lp-orbit-sec">
+      <div class="lp-wrap lp-split flip">
+        <div class="rv">
+          <p class="lp-kicker">Balances</p>
+          <h2 class="lp-h2">Everyone you split with, <em>at a glance.</em></h2>
+          <p class="lp-sub">You in the middle, your friends around you, across every group. The nearer they sit, the more money is still open between you.</p>
+          <ul class="legend">
+            <li class="up"><i></i>Gets back</li>
+            <li class="down"><i></i>Owes</li>
+            <li class="even"><i></i>Settled</li>
+          </ul>
+        </div>
+        <div class="orbit rv" role="img" aria-label="A circle of friends around you: green ones get money back, red ones owe, grey ones are settled.">
+          <div class="ring r1" aria-hidden="true"></div>
+          <div class="ring r2" aria-hidden="true"></div>
+          <div class="spin" aria-hidden="true">
+            <span class="p up" style="--a:20deg;--d:clamp(78px,25vw,128px);--c:#1E4FA8"><i>R</i></span>
+            <span class="p down" style="--a:110deg;--d:clamp(78px,25vw,128px);--c:#B5195E"><i>SP</i></span>
+            <span class="p down" style="--a:200deg;--d:clamp(78px,25vw,128px);--c:#B5651D"><i>T</i></span>
+            <span class="p up" style="--a:290deg;--d:clamp(78px,25vw,128px);--c:#00838F"><i>N</i></span>
+          </div>
+          <div class="spin r" aria-hidden="true">
+            <span class="p sm even" style="--a:0deg;--d:clamp(118px,38vw,198px);--c:#5E35B1"><i>A</i></span>
+            <span class="p sm up" style="--a:52deg;--d:clamp(118px,38vw,198px);--c:#2E7D32"><i>M</i></span>
+            <span class="p sm even" style="--a:104deg;--d:clamp(118px,38vw,198px);--c:#6D4C41"><i>P</i></span>
+            <span class="p sm down" style="--a:156deg;--d:clamp(118px,38vw,198px);--c:#C2183F"><i>D</i></span>
+            <span class="p sm even" style="--a:208deg;--d:clamp(118px,38vw,198px);--c:#455A64"><i>J</i></span>
+            <span class="p sm up" style="--a:260deg;--d:clamp(118px,38vw,198px);--c:#AD1457"><i>S</i></span>
+            <span class="p sm even" style="--a:312deg;--d:clamp(118px,38vw,198px);--c:#8D6E63"><i>O</i></span>
+          </div>
+          <div class="me" aria-hidden="true">KM<small>You</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-sec lp-paper">
       <div class="lp-wrap">
         <div class="lp-head rv">
           <p class="lp-kicker">The details</p>
@@ -201,8 +323,8 @@
         <div class="lp-bento">
           <article class="tile wide rv">
             <h3>Hostel &amp; flat, month by month</h3>
-            <p>Rent, Wi-Fi, the cook: switch on Repeat every month and it adds itself on the same day each month. Months missed while the app was closed are caught up.</p>
-            <div class="art art-month" aria-hidden="true"><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span class="now">Nov</span></div>
+            <p>Hostel and flat groups open on this month. An expense can count for another month, like next month's gas bought early, and Members and Settle stay all-time.</p>
+            <div class="art art-month" aria-hidden="true"><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span class="now">Nov</span><small>Spent in November 2026 · ₹18,450</small></div>
           </article>
           <article class="tile rv">
             <h3>Do the maths in the box</h3>
@@ -211,7 +333,7 @@
           </article>
           <article class="tile rv">
             <h3>Four ways to split</h3>
-            <p>Equally, exact amounts, shares or percent, with one payer or several. Live numbers as you type.</p>
+            <p>Equally, exact amounts, shares or percent, with one payer or several.</p>
             <div class="art art-chips" aria-hidden="true"><span class="on">Equally</span><span>₹ Exact</span><span>Shares</span><span>%</span></div>
           </article>
           <article class="tile rv">
@@ -236,22 +358,38 @@
             </div>
           </article>
           <article class="tile rv">
+            <h3>Lock a group</h3>
+            <p>Keep a group behind your fingerprint or screen lock. Its money stays out of your totals until you open it.</p>
+            <div class="art art-lock" aria-hidden="true">
+              <span class="fp"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 11v3.5c0 2-.6 3.8-1.6 5.3M8.2 7.6A5 5 0 0 1 17 11v2.5M7 11a5 5 0 0 1 .3-1.7M7 14v-.5M16.5 17c-.4 1.3-1 2.5-1.8 3.5M4.5 8.5A9 9 0 0 1 19.6 7M4 13v-2M20 11.5v1.5"/></svg></span>
+              <span><b>Room 204 is locked</b>Touch the sensor to open</span>
+            </div>
+          </article>
+          <article class="tile rv">
+            <h3>Back up to your Drive</h3>
+            <p>Like WhatsApp: your groups go to a hidden folder in your own Google Drive. A new phone gets them back.</p>
+            <div class="art art-drive" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#7A1F2B" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4.5 4.5 0 0 1-.6-9A6 6 0 0 1 18 9.5a4.3 4.3 0 0 1-.5 8.5H7z"/><path d="M12 15V10M9.5 12.5L12 10l2.5 2.5"/></svg>
+              <span><b>Backed up</b>Today, 9:40 pm</span>
+              <svg class="ok" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>
+            </div>
+          </article>
+          <article class="tile wide rv">
             <h3>Undo, and a Bin</h3>
-            <p>Deleted something by mistake? Undo is right there. Deleted groups wait 30 days in the Bin.</p>
-            <div class="art art-undo" aria-hidden="true"><span>Expense deleted</span><b>Undo</b></div>
+            <p>Deleted something by mistake? Undo is right there. Groups wait 30 days in the Bin before they're gone.</p>
+            <div class="art art-undo" aria-hidden="true"><span>“Dinner” deleted</span><b>Undo</b></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="lp-private" id="privacy">
+    <section class="lp-sec lp-private" id="privacy">
       <div class="lp-grain" aria-hidden="true"></div>
-      <div class="lp-lock" aria-hidden="true"></div>
       <div class="lp-wrap">
         <div class="lp-head rv" style="margin-bottom:0">
           <p class="lp-kicker">Privacy</p>
           <h2 class="lp-h2">Your money, <em>your choice.</em></h2>
-          <p class="lp-sub">No sign-up needed, no ads and no tracking. Groups live on your phone until you choose to share one live.</p>
+          <p class="lp-sub">No sign-up needed, no ads and no tracking. Groups live on your phone until you choose to put one online.</p>
         </div>
         <ul class="lp-promises rv">
           <li>
@@ -267,7 +405,7 @@
           <li>
             <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3M7 8l5-5 5 5M5 14v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></svg>
             <h3>Leaves only when you say</h3>
-            <p>Data leaves the phone only when you share a report, back up to your own Google Drive, or share a group live. <a href="/privacy">Read the privacy policy</a>.</p>
+            <p>Data leaves the phone only when you put a group online, share a report, or back up to your own Google Drive. <a href="/privacy">Read the privacy policy</a>.</p>
           </li>
         </ul>
       </div>
@@ -275,11 +413,11 @@
 
     <section class="lp-final">
       <div class="lp-grain" aria-hidden="true"></div>
-      <div class="lp-ring" aria-hidden="true"></div>
+      <div class="lamp" aria-hidden="true"><i class="lamp-cord"></i><i class="lamp-bulb"></i><i class="lamp-light"></i></div>
       <div class="lp-wrap rv">
-        <img src="/icon-192.png" alt="" width="88" height="88">
+        <img class="icon" src="/icon-192.png" alt="" width="88" height="88">
         <h2>Every trip should end <em>even.</em></h2>
-        <p>Vilarci E-Split is on Google Play for Android phones.</p>
+        <p>Vilarci E-Split is free on Google Play for Android phones, tablets and Chromebooks.</p>
         <a class="gplay lp-play play" href="https://play.google.com/store/apps/details?id=in.vilarci.expensesplit">
           <img src="/google-play-badge.png" alt="Get it on Google Play" width="646" height="250">
         </a>
@@ -292,7 +430,7 @@
       <a class="lp-mark" href="/"><img src="/icon-192.png" alt="" width="28" height="28"><span>Vilarci <em>E-Split</em></span></a>
       <nav aria-label="Footer">
         <a href="#how">How it works</a>
-        <a href="#features">Features</a>
+        <a href="#live">Live groups</a>
         <a href="/privacy">Privacy policy</a>
         <a href="/delete-account">Delete account</a>
         <a href="mailto:support@vilarci.in">Contact</a>
@@ -396,13 +534,12 @@
   }
 </script>
 <script>
-  // Landing page only: the nav turns solid once it leaves the red hero, and sections fade in on scroll.
+  // Landing page only: the nav turns solid as soon as the page scrolls, and sections fade in on scroll.
   (function () {
     if (joining) return;
     var nav = document.querySelector('.lp-nav');
-    var hero = document.querySelector('.lp-hero');
     function onScroll() {
-      nav.classList.toggle('solid', window.scrollY > hero.offsetHeight - nav.offsetHeight);
+      nav.classList.toggle('solid', window.scrollY > 24);
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();

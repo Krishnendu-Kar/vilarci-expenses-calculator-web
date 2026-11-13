@@ -12,8 +12,8 @@ Plain static files, no build step. Everything served lives in `public/`.
 | `public/reset.html` | `/reset`: set a new password from the reset email (uses supabase-js 2.119.0 from jsDelivr and the app's publishable key) |
 | `public/privacy.html` | `/privacy`: privacy policy. **Draft:** fill in `[contact email]` before publishing |
 | `public/delete-account.html` | `/delete-account`: how to delete an account (Google Play needs this link). **Draft:** same placeholder |
-| `public/style.css` | Styles shared by every page (light and dark), including `.gplay`, the wrapper for Google's official "Get it on Google Play" badge (`public/google-play-badge.png`, used unmodified per Google's badge guidelines) |
-| `public/home.css` | The landing page's own styles (only `index.html` loads it). Everything is scoped to `.lp`; `html.invite` (set in `index.html`'s `<head>` for `/join/<code>` and `?c=`) hides the landing and shows the invite card from `style.css` |
+| `public/style.css` | Styles shared by every page (light and dark: a cream page under a maroon glow, serif headings from the system, no web fonts), including `.gplay`, the wrapper for Google's official "Get it on Google Play" badge (`public/google-play-badge.png`, used unmodified per Google's badge guidelines) |
+| `public/home.css` | The landing page's own styles (only `index.html` loads it), "a night in maroon" after the app's Home screen: the swinging gold lamp, the starry sky (HERO_SKY) for live groups and Balances, one cream band for the details, the app's dark theme on the phone mock-ups. Always dark (not tied to the phone's theme). Everything is scoped to `.lp`, and it undoes `style.css`'s card look on the landing's `<main>`; `html.invite` (set in `index.html`'s `<head>` for `/join/<code>` and `?c=`) hides the landing and gives the invite card the app's starry Join card look |
 | `public/_redirects` | Serves `index.html` for `/join/<code>`, keeping the address |
 | `public/.well-known/assetlinks.json` | Lets Android open `esplit.vilarci.in` links straight in the app (App Links) |
 | `public/_headers` | Cloudflare Pages headers (JSON type for assetlinks, basic safety headers) |
@@ -67,8 +67,10 @@ http://127.0.0.1:5501/ (not `/public/index.html`). The pages link
 as the root. Live Server doesn't read `_redirects`, so use `?c=K7QM2XPA`
 there for the invite card.
 
-## Planned pages
+## Keeping the landing page true to the app
 
-- `/privacy`: privacy policy (needed before accounts ship, app 1.4.0).
-- `/delete-account`: how to delete your account (required by Google Play
-  for apps with accounts).
+The phone and cards on the landing page copy real screens (Members tab,
+Activity, Settle, Balances). When the app changes how they look, or a
+feature goes (monthly repeats were removed in 2.1.0), change them here
+too. All motion (the lamp, the orbit, the strip, reveals) stops under
+`prefers-reduced-motion`.

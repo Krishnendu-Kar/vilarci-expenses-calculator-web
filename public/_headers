@@ -2,6 +2,16 @@
   Content-Type: application/json
   Access-Control-Allow-Origin: *
 
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+
+/site.webmanifest
+  Content-Type: application/manifest+json
+
+# Invite links serve the home page's HTML: keep them out of search results.
+/join/*
+  X-Robots-Tag: noindex
+
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

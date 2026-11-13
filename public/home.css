@@ -542,6 +542,27 @@ html:not(.invite) body {
 .art-undo { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 13px 16px !important; border-radius: 14px; background: #2b1a1d; color: #f4eaeb; font-size: 14px; }
 .art-undo b { color: var(--gold-hi); }
 
+/* ---- FAQ ---- */
+.lp-faq { background: linear-gradient(180deg, var(--n-0), var(--n-1) 60%, var(--n-0)); }
+.lp-faq-in { display: grid; gap: 40px; }
+@media (min-width: 900px) { .lp-faq-in { grid-template-columns: .8fr 1.2fr; gap: 64px; align-items: start; } .lp-faq .lp-head { position: sticky; top: 110px; } }
+.lp-faq .lp-head { margin-bottom: 0; }
+.lp-faq .lp-sub a { color: var(--gold-hi); }
+.lp-qa details { border-bottom: 1px solid var(--line); }
+.lp-qa details:first-child { border-top: 1px solid var(--line); }
+.lp-qa summary {
+  list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 18px;
+  padding: 22px 2px; font: 400 25px/1.25 var(--serif); color: var(--text);
+}
+.lp-qa summary::-webkit-details-marker { display: none; }
+.lp-qa summary::after {
+  content: "+"; flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+  border: 1px solid var(--line); color: var(--gold-hi); font: 400 22px/1 var(--sans); transition: transform .3s var(--ease), background .3s;
+}
+.lp-qa details[open] summary::after { transform: rotate(45deg); background: rgba(212,166,87,.12); }
+.lp-qa summary:hover { color: var(--gold-hi); }
+.lp-qa details p { padding: 0 52px 24px 2px; color: var(--text-2) !important; font-size: 16.5px; }
+
 /* ---- Privacy ---- */
 .lp-private { position: relative; isolation: isolate; overflow: hidden; background: radial-gradient(70% 70% at 15% 0%, rgba(122,31,43,.45), transparent 60%), var(--n-0); }
 .lp-promises { list-style: none; margin: 56px 0 0; padding: 0; display: grid; gap: 16px; }

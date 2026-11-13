@@ -3,17 +3,183 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vilarci E-Split</title>
-<meta name="description" content="Split group expenses with friends: trips, hostel mess and flatmates. Live groups on every phone, pay by UPI, works offline.">
+<title>Vilarci E-Split – Split Bills &amp; Group Expenses with Friends</title>
+<meta name="description" content="Free bill-splitting app for trips, hostel mess and flatmates. Log who paid, see who owes whom, settle with the fewest payments and pay by UPI. Works offline.">
+<link rel="canonical" href="https://esplit.vilarci.in/">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#24060A">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/icon-192.png">
-<!-- Link previews (WhatsApp, Telegram). This page serves / and every /join/<code>, so these stay general. -->
+<link rel="manifest" href="/site.webmanifest">
+<!-- Link previews (Google, WhatsApp, X). This page also serves every /join/<code> (those are
+     noindex through _headers), so the preview text stays good for an invite too. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Vilarci E-Split">
-<meta property="og:title" content="Vilarci E-Split">
-<meta property="og:description" content="Split group expenses with friends. Tap to join the group or get the app.">
-<meta property="og:image" content="https://esplit.vilarci.in/icon-512.png">
+<meta property="og:locale" content="en_IN">
+<meta property="og:url" content="https://esplit.vilarci.in/">
+<meta property="og:title" content="Vilarci E-Split: split bills with friends">
+<meta property="og:description" content="Split group expenses with friends: trips, hostel mess and flatmates. Tap to join the group or get the app.">
+<meta property="og:image" content="https://esplit.vilarci.in/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Vilarci E-Split: every rupee, fairly shared. A group's total and who gets back or owes.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vilarci E-Split: split bills with friends">
+<meta name="twitter:description" content="Split group expenses for trips, hostel mess and flatmates. Settle with the fewest payments and pay by UPI.">
+<meta name="twitter:image" content="https://esplit.vilarci.in/og-image.jpg">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://dev.vilarci.in/#organization",
+   "name": "Vilarci",
+   "alternateName": "Vilarci Dev",
+   "url": "https://dev.vilarci.in/",
+   "logo": "https://officialpic.vilarci.in/Icons/web-icon.png",
+   "email": "support@vilarci.in"
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://esplit.vilarci.in/#website",
+   "url": "https://esplit.vilarci.in/",
+   "name": "Vilarci E-Split",
+   "inLanguage": "en-IN",
+   "publisher": {
+    "@id": "https://dev.vilarci.in/#organization"
+   }
+  },
+  {
+   "@type": "MobileApplication",
+   "@id": "https://esplit.vilarci.in/#app",
+   "name": "Vilarci E-Split",
+   "alternateName": "E-Split",
+   "description": "Free bill-splitting app for trips, hostel mess and flatmates. Log who paid, see who owes whom, settle with the fewest payments and pay by UPI. Works offline.",
+   "url": "https://esplit.vilarci.in/",
+   "image": "https://esplit.vilarci.in/og-image.jpg",
+   "applicationCategory": "FinanceApplication",
+   "applicationSubCategory": "Bill splitting and group expenses",
+   "operatingSystem": "Android 7.0 or later",
+   "installUrl": "https://play.google.com/store/apps/details?id=in.vilarci.expensesplit",
+   "downloadUrl": "https://play.google.com/store/apps/details?id=in.vilarci.expensesplit",
+   "inLanguage": [
+    "en",
+    "hi",
+    "bn",
+    "ta"
+   ],
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+   },
+   "featureList": [
+    "Split expenses equally, by exact amounts, by shares or by percent",
+    "Live groups that stay the same on every member's phone",
+    "Invite by link or QR code",
+    "Fewest payments to settle up",
+    "Pay by UPI from Settle up",
+    "Works offline",
+    "Hostel and flat groups month by month",
+    "Paste amounts from a WhatsApp chat",
+    "PDF and WhatsApp reports",
+    "Google Drive backup",
+    "English, Hindi, Bengali and Tamil"
+   ],
+   "publisher": {
+    "@id": "https://dev.vilarci.in/#organization"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://esplit.vilarci.in/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Is Vilarci E-Split free?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. It's free on Google Play, with no ads and no tracking."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Do I need to sign up?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Groups you keep on your phone work without an account. You only sign in, with Google or email, to put a group online and share it with friends."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does it work without internet?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Add and edit expenses anywhere. Online groups catch up by themselves when you're back on the internet."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do friends join my group?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Put the group online and share its invite link or QR code, or tell them the 8-letter code. They install the app, sign in and join. Admins can approve each new member first."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can it handle hostel mess and flat expenses month by month?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Hostel and flat groups open on the current month, an expense can count for another month, and Members and Settle up stay all-time, so nothing is lost between months."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How does it work out who pays whom?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It nets out what everyone paid and owes, then shows the fewest payments that make everyone even. Amounts are kept to the paisa, so the parts always add up."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Can friends pay me by UPI?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Save your UPI id in your profile. In Settle up, Pay opens any UPI app with your id and the amount already filled in."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which languages does it support?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "English, Hindi, Bengali and Tamil. The whole app switches at once, even the reports you share."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is it a good Splitwise alternative in India?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It's made for how groups in India split money: rupees and paise, UPI payments, hostel months, Indian languages, and amounts pasted straight from a WhatsApp chat. It works offline and has no ads."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is there an iPhone app?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Not yet. Vilarci E-Split is on Google Play for Android phones, tablets and Chromebooks."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 <script>
   // Invite links (/join/<code>, ?c=<code>) show the invite card instead of the landing page.
   // Decided before anything paints, so the landing never flashes. Same test as readCode() below.
@@ -38,7 +204,7 @@
         <a href="#how">How it works</a>
         <a href="#live">Live groups</a>
         <a href="#features">Features</a>
-        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <a class="lp-pill play" href="https://play.google.com/store/apps/details?id=in.vilarci.expensesplit">Get the app</a>
     </div>
@@ -51,7 +217,7 @@
       <div class="lamp" aria-hidden="true"><i class="lamp-cord"></i><i class="lamp-bulb"></i><i class="lamp-light"></i></div>
       <div class="lp-wrap lp-hero-in">
         <div class="lp-hero-copy">
-          <p class="lp-eyebrow"><i></i>For trips, hostel mess &amp; flatmates</p>
+          <p class="lp-eyebrow"><i></i>The bill-splitting app for trips, hostel mess &amp; flatmates</p>
           <h1 class="lp-display">Every rupee,<br><em>fairly</em> shared.</h1>
           <p class="lp-lede">Log who paid for what, on your own phone or live with the whole group. Vilarci E-Split works out who owes whom, the fewest payments to even it out, and lets everyone pay by UPI.</p>
           <div class="lp-cta">
@@ -383,6 +549,58 @@
       </div>
     </section>
 
+    <section class="lp-sec lp-faq" id="faq">
+      <div class="lp-wrap lp-faq-in">
+        <div class="lp-head rv">
+          <p class="lp-kicker">Questions</p>
+          <h2 class="lp-h2">Before you <em>ask.</em></h2>
+          <p class="lp-sub">Anything else? Write to <a href="mailto:support@vilarci.in">support@vilarci.in</a>.</p>
+        </div>
+        <div class="lp-qa rv">
+          <details>
+            <summary>Is Vilarci E-Split free?</summary>
+            <p>Yes. It&#x27;s free on Google Play, with no ads and no tracking.</p>
+          </details>
+          <details>
+            <summary>Do I need to sign up?</summary>
+            <p>No. Groups you keep on your phone work without an account. You only sign in, with Google or email, to put a group online and share it with friends.</p>
+          </details>
+          <details>
+            <summary>Does it work without internet?</summary>
+            <p>Yes. Add and edit expenses anywhere. Online groups catch up by themselves when you&#x27;re back on the internet.</p>
+          </details>
+          <details>
+            <summary>How do friends join my group?</summary>
+            <p>Put the group online and share its invite link or QR code, or tell them the 8-letter code. They install the app, sign in and join. Admins can approve each new member first.</p>
+          </details>
+          <details>
+            <summary>Can it handle hostel mess and flat expenses month by month?</summary>
+            <p>Yes. Hostel and flat groups open on the current month, an expense can count for another month, and Members and Settle up stay all-time, so nothing is lost between months.</p>
+          </details>
+          <details>
+            <summary>How does it work out who pays whom?</summary>
+            <p>It nets out what everyone paid and owes, then shows the fewest payments that make everyone even. Amounts are kept to the paisa, so the parts always add up.</p>
+          </details>
+          <details>
+            <summary>Can friends pay me by UPI?</summary>
+            <p>Yes. Save your UPI id in your profile. In Settle up, Pay opens any UPI app with your id and the amount already filled in.</p>
+          </details>
+          <details>
+            <summary>Which languages does it support?</summary>
+            <p>English, Hindi, Bengali and Tamil. The whole app switches at once, even the reports you share.</p>
+          </details>
+          <details>
+            <summary>Is it a good Splitwise alternative in India?</summary>
+            <p>It&#x27;s made for how groups in India split money: rupees and paise, UPI payments, hostel months, Indian languages, and amounts pasted straight from a WhatsApp chat. It works offline and has no ads.</p>
+          </details>
+          <details>
+            <summary>Is there an iPhone app?</summary>
+            <p>Not yet. Vilarci E-Split is on Google Play for Android phones, tablets and Chromebooks.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <section class="lp-sec lp-private" id="privacy">
       <div class="lp-grain" aria-hidden="true"></div>
       <div class="lp-wrap">
@@ -415,7 +633,7 @@
       <div class="lp-grain" aria-hidden="true"></div>
       <div class="lamp" aria-hidden="true"><i class="lamp-cord"></i><i class="lamp-bulb"></i><i class="lamp-light"></i></div>
       <div class="lp-wrap rv">
-        <img class="icon" src="/icon-192.png" alt="" width="88" height="88">
+        <img class="icon" src="/icon-192.png" alt="Vilarci E-Split app icon" width="88" height="88" loading="lazy">
         <h2>Every trip should end <em>even.</em></h2>
         <p>Vilarci E-Split is free on Google Play for Android phones, tablets and Chromebooks.</p>
         <a class="gplay lp-play play" href="https://play.google.com/store/apps/details?id=in.vilarci.expensesplit">
@@ -431,6 +649,7 @@
       <nav aria-label="Footer">
         <a href="#how">How it works</a>
         <a href="#live">Live groups</a>
+        <a href="#faq">FAQ</a>
         <a href="/privacy">Privacy policy</a>
         <a href="/delete-account">Delete account</a>
         <a href="mailto:support@vilarci.in">Contact</a>

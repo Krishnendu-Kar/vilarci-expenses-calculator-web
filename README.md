@@ -14,6 +14,9 @@ Plain static files, no build step. Everything served lives in `public/`.
 | `public/delete-account.html` | `/delete-account`: how to delete an account (Google Play needs this link). **Draft:** same placeholder |
 | `public/style.css` | Styles shared by every page (light and dark: a cream page under a maroon glow, serif headings from the system, no web fonts), including `.gplay`, the wrapper for Google's official "Get it on Google Play" badge (`public/google-play-badge.png`, used unmodified per Google's badge guidelines) |
 | `public/home.css` | The landing page's own styles (only `index.html` loads it), "a night in maroon" after the app's Home screen: the swinging gold lamp, the starry sky (HERO_SKY) for live groups and Balances, one cream band for the details, the app's dark theme on the phone mock-ups. Always dark (not tied to the phone's theme). Everything is scoped to `.lp`, and it undoes `style.css`'s card look on the landing's `<main>`; `html.invite` (set in `index.html`'s `<head>` for `/join/<code>` and `?c=`) hides the landing and gives the invite card the app's starry Join card look |
+| `public/robots.txt`, `public/sitemap.xml` | Search engines: everything public may be indexed; the sitemap lists `/`, `/privacy`, `/delete-account` (update `lastmod` when a page changes). Cloudflare's managed robots.txt adds its AI-crawler rules in front |
+| `public/og-image.jpg` | The 1200×630 share image (Google, WhatsApp, X), "Every rupee, fairly shared" |
+| `public/site.webmanifest` | Name, icons and colours for browsers |
 | `public/_redirects` | Serves `index.html` for `/join/<code>`, keeping the address |
 | `public/.well-known/assetlinks.json` | Lets Android open `esplit.vilarci.in` links straight in the app (App Links) |
 | `public/_headers` | Cloudflare Pages headers (JSON type for assetlinks, basic safety headers) |
@@ -74,3 +77,14 @@ Activity, Settle, Balances). When the app changes how they look, or a
 feature goes (monthly repeats were removed in 2.1.0), change them here
 too. All motion (the lamp, the orbit, the strip, reveals) stops under
 `prefers-reduced-motion`.
+
+## Search (SEO)
+
+- `index.html` has the title, description, canonical (`https://esplit.vilarci.in/`),
+  Open Graph and X tags, and JSON-LD (Organization, WebSite, MobileApplication,
+  FAQPage). The FAQ's JSON-LD must say exactly what the visible FAQ says.
+- Invite links (`/join/*`) get `X-Robots-Tag: noindex` from `_headers`, because they
+  serve the home page's HTML. `/confirmed`, `/reset` and the 404 page are `noindex`.
+- Google Search Console: one **Domain** property for `vilarci.in` (DNS TXT record in
+  Cloudflare) covers this site and dev.vilarci.in. Submit
+  `https://esplit.vilarci.in/sitemap.xml` there.

@@ -1,0 +1,7 @@
+# esplit.vilarci.in: everything public may be indexed. Invite links (/join/<code>)
+# are kept out with an X-Robots-Tag: noindex header (see _headers), not blocked
+# here, so search engines can still read that header.
+User-agent: *
+Allow: /
+
+Sitemap: https://esplit.vilarci.in/sitemap.xml
